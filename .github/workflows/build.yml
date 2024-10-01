@@ -1,8 +1,11 @@
 name: Build
 
 on:
-  push:
-  pull_request:
+  # push:
+  # pull_request:
+
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  workflow_dispatch:
 
 jobs:
   Windows:
@@ -10,7 +13,7 @@ jobs:
 
     steps:
     # Checks-out
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - uses: ilammy/msvc-dev-cmd@v1
 
@@ -97,7 +100,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Install Dependencies
       run: |
